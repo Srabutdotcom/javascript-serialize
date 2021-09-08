@@ -1,4 +1,4 @@
-import { randomBytes } from "../deps.js";
+import { randomBytes } from "https://deno.land/std@0.106.0/node/_crypto/randomBytes.ts";
 
 interface ESCAPED_CHARS_INT {
     [key: string]: string
