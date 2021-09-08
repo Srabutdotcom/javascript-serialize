@@ -1,4 +1,4 @@
-import { randomBytes } from "https://deno.land/std@0.106.0/node/crypto.ts";
+//import { randomBytes } from "https://deno.land/std@0.106.0/node/crypto.ts";
 
 interface ESCAPED_CHARS_INT {
     [key: string]: string
@@ -25,12 +25,14 @@ function escapeUnsafeChars(unsafeChar: string) {
 }
 
 function generateUID() {
-    const bytes = randomBytes(UID_LENGTH);
+    const timestamp = Date.now()
+    return btoa(timestamp.toString())
+    /* const bytes = randomBytes(UID_LENGTH);
     let result = '';
     for (let i = 0; i < UID_LENGTH; ++i) {
         result += bytes[i].toString(16);
     }
-    return result;
+    return result; */
 }
 
 function deleteFunctions(obj: any) {
